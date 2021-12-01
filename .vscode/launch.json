@@ -1,0 +1,42 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug unit tests in executable 'aoc-2020'",
+      "cargo": {
+        "args": [
+          "test",
+          "--no-run",
+          "--bin=aoc-2020",
+          "--package=aoc-2020"
+        ],
+        "filter": {
+          "name": "aoc-2020",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug executable 'aoc-2020'",
+      "cargo": {
+        "args": [
+          "build",
+          "--bin=aoc-2020",
+          "--package=aoc-2020"
+        ],
+        "filter": {
+          "name": "aoc-2020",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}
