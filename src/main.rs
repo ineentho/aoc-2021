@@ -10,11 +10,13 @@ mod template;
 mod util;
 
 mod challenge01;
+mod challenge02;
 
 fn exec(day: u32, part: &str, stdin: String) -> Result<String, Error> {
     let challenge: Box<dyn Challenge> = match day {
         0 => Box::new(template::ChallengeTemplate {}),
         1 => Box::new(challenge01::Challenge01 {}),
+        2 => Box::new(challenge02::Challenge02 {}),
         _ => return Err(Error::new(ErrorKind::Other, "Invalid day")),
     };
 
