@@ -114,6 +114,6 @@ mod tests {
 
     #[test]
     fn run() {
-        assert_eq!("55770", super::run(read_test_resource("day04.txt")));
+        assert_eq!("2980", super::run(read_test_resource("day04.txt")));
     }
 }
