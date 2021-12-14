@@ -13,6 +13,7 @@ mod challenge01;
 mod challenge02;
 mod challenge03;
 mod challenge04;
+mod challenge05;
 
 fn exec(day: u32, part: &str, stdin: String) -> Result<String, Error> {
     let challenge: Box<dyn Challenge> = match day {
@@ -21,6 +22,7 @@ fn exec(day: u32, part: &str, stdin: String) -> Result<String, Error> {
         2 => Box::new(challenge02::Challenge02 {}),
         3 => Box::new(challenge03::Challenge03 {}),
         4 => Box::new(challenge04::Challenge04 {}),
+        5 => Box::new(challenge05::Challenge05 {}),
         _ => return Err(Error::new(ErrorKind::Other, "Invalid day")),
     };
 
