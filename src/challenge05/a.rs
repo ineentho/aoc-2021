@@ -22,14 +22,6 @@ impl Line {
     }
 }
 
-fn has_reached_end(current_position: i32, to: i32, increment: i32) -> bool {
-    if increment < 0 {
-        current_position <= to
-    } else {
-        current_position >= to
-    }
-}
-
 struct LineIterator<'a> {
     line: &'a Line,
     current: Point,
@@ -64,10 +56,7 @@ impl<'a> Iterator for LineIterator<'a> {
         if self.is_first {
             self.is_first = false;
         } else {
-            let x_reached_end = has_reached_end(self.current.x, self.line.to.x, self.incr.x);
-            let y_reached_end = has_reached_end(self.current.y, self.line.to.y, self.incr.y);
-
-            if x_reached_end && y_reached_end {
+            if self.current.x == self.line.to.x && self.current.y == self.line.to.y {
                 return None;
             }
 
